@@ -6,7 +6,7 @@ const withMDX = require('@zeit/next-mdx')({
 })
 
 module.exports = withMDX({
-  distDir: "dist"
+  distDir: "dist",
   target: 'serverless',
   pageExtensions: ['js', 'jsx', 'mdx', 'md'],
   webpack: (config, { defaultLoaders, isServer, dev }) => {
