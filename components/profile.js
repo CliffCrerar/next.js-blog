@@ -2,7 +2,7 @@ import { siteMeta } from '../blog.config'
 
 const Profile = () => (
   <div className='h-card profile'>
-    <img className='u-photo' src='/static/_jolvera.png' alt={siteMeta.author} />
+    <img className='u-photo' src={siteMeta.profileImg} alt={siteMeta.author} />
 
     <div>
       <p>

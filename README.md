@@ -1,3 +1,2 @@
-# Next blog
+# Next blog template
 
-Still work in progress.
