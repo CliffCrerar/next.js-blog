@@ -1,7 +1,9 @@
-const fs = require('fs')
-const path = require('path')
-const posts = require('./get-blog-posts')
-const { siteMeta } = require('../blog.config')
+const
+  { stringify } = JSON,
+  { writeFileSync } = require('fs'),
+  { join } = require('path'),
+  { siteMeta } = require('../blog.config'),
+  posts = require('./get-blog-posts');
 
 // https://jsonfeed.org/version/1
 const feed = {
@@ -29,4 +31,4 @@ const feed = {
   }))
 }
 
-fs.writeFileSync(path.join('./.next/static', 'feed.json'), JSON.stringify(feed))
+writeFileSync(join('./.next/static', 'feed.json'), stringify(feed))

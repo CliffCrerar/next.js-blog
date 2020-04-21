@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { parse, format } from 'date-fns'
+import moment from 'moment'
 
 function PublishedAt (props) {
   const { link, date } = props
@@ -8,9 +8,7 @@ function PublishedAt (props) {
     <>
       <Link href={link}>
         <a href={link} className='u-url' mcolor='#aaa' {...props}>
-          <time className='dt-published'>
-            {format(parse(date), 'MMMM DD, YYYY')}
-          </time>
+          {moment().format('DD MMM YYYY')}
         </a>
       </Link>
       <style jsx>{`
