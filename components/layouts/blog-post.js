@@ -6,7 +6,7 @@ import PublishedAt from '../utils/published-at'
 import blogposts from '../../posts/index'
 import NextPrevPost from '../next-prev-post'
 
-function BlogPost ({ path, meta, children }) {
+function BlogPost({ path, meta, children }) {
   const currentPostIndex = blogposts
     .map(({ title }) => title)
     .indexOf(meta.title)
@@ -23,19 +23,21 @@ function BlogPost ({ path, meta, children }) {
           <div>
             <PublishedAt date={meta.publishedAt} link={path} />
 
-            <Link href='/about'>
-              <a
-                color='#aaa'
-                rel='author'
-                className='p-author h-card'
-                href='/about'
-              >
-                {siteMeta.author}
-              </a>
-            </Link>
+              <Link href='/about'>
+                <a
+                  color='#aaa'
+                  rel='author'
+                  className='p-author h-card'
+                  href='/about'
+                >
+                  {siteMeta.author}
+                </a>
+              </Link>
+
           </div>
         </header>
         <div className='e-content'>{children}</div>
+        <hr/>
         <footer>
           {(previousPost || nextPost) && (
             <div className='post-pagination'>
@@ -56,7 +58,9 @@ function BlogPost ({ path, meta, children }) {
             </div>
           )}
         </footer>
+        
       </article>
+      
       <style jsx>{`
         header {
           margin-bottom: 2em;

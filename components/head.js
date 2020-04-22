@@ -46,8 +46,6 @@ const Head = props => (
     <meta property='og:image:width' content='1200' />
     <meta property='og:image:height' content='630' />
 
-    <link src="/static/css/normalize.css" rel="stylesheet" />
-    <link src="/static/css/skeleton.css" rel="stylesheet" />
   </NextHead>
 )
 
