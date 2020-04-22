@@ -11,6 +11,7 @@ function Page ({ meta, children }) {
       </article>
       <style jsx>{`
         header {
+          margin-top: 2em;
           margin-bottom: 2em;
         }
       `}</style>

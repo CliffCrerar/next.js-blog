@@ -6,23 +6,19 @@ import Layout from '../components/layouts/default'
 import Post from '../components/blog-index-item'
 import blogposts from '../posts/index'
 import { siteMeta } from '../blog.config'
+import { Fragment } from 'react'
 
 const Blog = ({ router, page = 1 }) => {
-  const paginator = new pagination.SearchPaginator({
-    prelink: '/',
-    current: page,
-    rowsPerPage: siteMeta.postsPerPage,
-    totalResult: blogposts.length
-  })
-
-  const {
-    previous,
-    range,
-    next,
-    fromResult,
-    toResult
-  } = paginator.getPaginationData()
-  const results = _range(fromResult - 1, toResult)
+  
+  const
+    paginator = new pagination.SearchPaginator({
+      prelink: '/',
+      current: page,
+      rowsPerPage: siteMeta.postsPerPage,
+      totalResult: blogposts.length
+    }),
+    { previous, range, next, fromResult, toResult } = paginator.getPaginationData(),
+    results = _range(fromResult - 1, toResult)
 
   return (
     <Layout pageTitle='Blog' path={router.pathname}>
@@ -33,13 +29,16 @@ const Blog = ({ router, page = 1 }) => {
       {blogposts
         .filter((_post, index) => results.indexOf(index) > -1)
         .map((post, index) => (
-          <Post
-            key={index}
-            title={post.title}
-            summary={post.summary}
-            date={post.publishedAt}
-            path={post.path}
-          />
+          <Fragment key={'POST-' + index}>
+            <Post
+              key={index}
+              title={post.title}
+              summary={post.summary}
+              date={post.publishedAt}
+              path={post.path}
+            />
+            <hr />
+          </Fragment>
         ))}
 
       <ul>
@@ -72,7 +71,7 @@ const Blog = ({ router, page = 1 }) => {
       `}</style>
     </Layout>
   )
-}
+};
 
 Blog.getInitialProps = async ({ query }) => {
   return query ? { page: query.page } : {}

@@ -12,13 +12,13 @@ const NextPrevPost = ({ title, path, position }) => {
         </a>
       </Link>
       <style jsx>{`
-        a {
-          display: flex;
-          flex-direction: column;
-          ${isNext ? 'text-align: right;' : ''}
-          ${isNext ? 'grid-column: 2 / 2;' : ''}
-        }
-      `}</style>
+          a {
+            display: flex;
+            flex-direction: column;
+            ${isNext ? 'text-align: right;' : ''}
+            ${isNext ? 'grid-column: 2 / 2;' : ''}
+          }
+        `}</style>
     </>
   )
 }

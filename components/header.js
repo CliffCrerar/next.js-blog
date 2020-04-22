@@ -18,12 +18,7 @@ function Header({ path, pageTitle, ogImage }) {
           
           @import url('/static/css/normalize.css');
           @import url('/static/css/skeleton.css');
-
-          header{
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-          }
+          
       `}</style>
 
     </>
