@@ -27,5 +27,8 @@
     "@svgr/webpack": "^5.3.1",
     "prettier": "^2.0.5",
     "rehype": "^10.0.0"
+  },
+  "engines" : { 
+    "node" : "10.14.0" 
   }
 }

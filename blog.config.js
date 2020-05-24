@@ -1,4 +1,5 @@
 module.exports = {
+  target: 'serverless',
   siteMeta: {
     title: 'Next.js Starter Blog',
     author: 'Joseph Bloggs',
