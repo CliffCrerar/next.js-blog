@@ -1,11 +1,10 @@
 {
   "name": "nextjs-blog-starter",
   "scripts": {
-    "dev": "next",
+    "start": "next",
     "build": "next build",
     "build:rss": "node ./.next/serverless/posts/rss-feed.js",
     "now-build": "next build && yarn build:rss"
-    
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
